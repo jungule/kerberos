@@ -1,6 +1,6 @@
 {
   "name": "kerberos",
-  "version": "0.0.20",
+  "version": "0.0.11",
   "description": "Kerberos library for Node.js",
   "main": "index.js",
   "repository": {
@@ -13,17 +13,17 @@
     "authentication"
   ],
   "dependencies": {
-    "nan": "~2.3"
+    "nan": "~1.8"
   },
   "devDependencies": {
     "nodeunit": "latest"
   },
-  "scripts": {
-    "install" : "(node-gyp rebuild) || (exit 0)",
-    "test" : "nodeunit ./test"
+  "scripts": { 
+    "test": "npm install --build-from-source && nodeunit test",
+    "install": "node-pre-gyp install --fallback-to-build"
   },
   "author": "Christian Amor Kvalheim",
-  "license": "Apache-2.0",
+  "license": "Apache 2.0",
   "readmeFilename": "README.md",
-  "gitHead": "035be2e4619d7f3d7ea5103da1f60a6045ef8d7c"
+  "gitHead": "bb01d4fe322e022999aca19da564e7d9db59a8ed"
 }
