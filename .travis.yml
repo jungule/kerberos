@@ -1,22 +1,23 @@
 language: node_js
 node_js:
-  - "0.8"
-  - "0.10"
-  - "0.12"
-  - "iojs-v1.8.4"
-  - "iojs-v2.5.0"
-  - "iojs-v3.3.0"
-  - "4"
-  - "5"
-  - "6"
+- '6'
 addons:
   apt:
     sources:
-      - ubuntu-toolchain-r-test
+    - ubuntu-toolchain-r-test
     packages:
-      - g++-4.8
+    - g++-4.8
 before_install:
-  - '[ "${TRAVIS_NODE_VERSION}" != "0.8" ] || npm install -g npm@1.4.28'
-  - if [[ $TRAVIS_OS_NAME == "linux" ]]; then export CXX=g++-4.8; fi
-  - $CXX --version
-  - npm explore npm -g -- npm install node-gyp@latest
+- '[ "${TRAVIS_NODE_VERSION}" != "0.8" ] || npm install -g npm@1.4.28'
+- if [[ $TRAVIS_OS_NAME == "linux" ]]; then export CXX=g++-4.8; fi
+- "$CXX --version"
+- npm explore npm -g -- npm install node-gyp@latest
+deploy:
+  provider: releases
+  api_key:
+    secure: YyeH3E+dtwAd+eus+PujGyt4cuy1QKT9d9a052TQc3KaNH08vV/iUKDDQBsGGAinU2zUaIkbXvT2zI/BLHKLLu+ZbgOD+W/+IL5Lo4dGvvdBw9Czys9UEz3qu52mG+Brw0phHhNehqYK9maZ17DL1mEKx+W2lq9CWL5glBiVH386nNDlr9xUVO3kMKqDbprhFdjxI+v4Fx/I5liKtMhfq09CUMr/QoP2C8ZVL04AWpETHG60Pts+phtfJR2qLbwCf0X0Oc1Djr6IaV9PATl0WwM8h3dAbFdkbx57RSDnwJ6RQx+CHXIgXDpdopeuS0ncSjAFlQUsAWgiCyuRSZmcZxCeKqN2znEFcGVVXQCMT9gMw4JLWzWeKBHtFeXaBOLYcN0128m3FqM0FJlwUPJvcqQ2gMXSVdH9dJnm2t9TlRVcDTIPF4vlGORd3D10Xg43jNrVPEfLuT70oU3NlUsI1+fbLsi08nKDQDLU5yHotIGhfz7I0iZbxmQ5gVENtoiQ1tydF9b11Kzn0F3KoNvC+LIZH5mmlNtBq+pIJRwtBQvJuAU64CjO0TeTSOtYPBH1SC2evPDYLS/oT0BAw3H1Thqcxxo11AeR9Asd92PcmAfC7VnG+KpPVowx/koth3oTLcZ1Ztcd68m9RXeHwftMoEgNKb3D3LZNnXBQYdRvQ34=
+    file: "$TRAVIS_BUILD_DIR/lib/binding/kerberos_lib.node"
+  skip_cleanup: true
+  on:
+    tags: false
+    repo: jungule/kerberos
