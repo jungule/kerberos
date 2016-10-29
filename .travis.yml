@@ -1,4 +1,9 @@
+
 language: node_js
+env:
+  matrix:
+  - CXX=g++-4.8
+  global:
 node_js:
 - '6'
 addons:
@@ -7,11 +12,10 @@ addons:
     - ubuntu-toolchain-r-test
     packages:
     - g++-4.8
+sudo: false
 before_install:
-- '[ "${TRAVIS_NODE_VERSION}" != "0.8" ] || npm install -g npm@1.4.28'
 - if [[ $TRAVIS_OS_NAME == "linux" ]]; then export CXX=g++-4.8; fi
 - "$CXX --version"
-- npm explore npm -g -- npm install node-gyp@latest
 deploy:
   provider: releases
   api_key:
