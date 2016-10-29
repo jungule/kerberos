@@ -19,8 +19,7 @@
     "nodeunit": "latest"
   },
   "scripts": { 
-    "test": "npm install --build-from-source && nodeunit test",
-    "install": "node-pre-gyp install --fallback-to-build"
+    "test": "npm install",
   },
   "author": "Christian Amor Kvalheim",
   "license": "Apache 2.0",
