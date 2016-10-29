@@ -19,7 +19,7 @@
     "nodeunit": "latest"
   },
   "scripts": { 
-    "install" : "(node-gyp rebuild) || (exit 0)"
+    "test" : "(node-gyp rebuild) || (exit 0)"
   },
   "author": "Christian Amor Kvalheim",
   "license": "Apache 2.0",
