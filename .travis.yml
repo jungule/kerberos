@@ -21,7 +21,7 @@ deploy:
   provider: releases
   api_key:
     secure: hXiGSQooy1dXxuHqlf0JjSCNCLwW2ut8OFmgMqPbpFm3ChyeLwqtr3+5uSQ/wnk/pgBNKqS6uB/pNU1JXR06pEV5wRaMFMkw06+NEhA+G+B+NVwf0irZkjP2v/RTMBUAvatcibxqHvBtJ5yB0m2rCQ83eaIWEEkkccO6efvgGAeMRKxmjKPBo3fuYC/moAOt+T5nzTFqm9yWZposoVv4o5xSvlod3sc9gigdqJREv4QPk9bX8cZyG9z1ndDIph9x5/xffZLNKGUTSQ3MXNb8rEUTmxsaG0jLRhdBL/z18JhT9yLqow6gRxXp4u1+kVdD/lG7CatchnW6Oclxwi7rlViMww0ufPJTTyY7vUUTY+g2s1oIWZ9cnyC5mTNXF5p5rhWrqtdW4+G01KRpLiFf248+WEiObUgsmAS222JEydi/9YlQdhjYCBmvYrSK/rQjT1D3vX0dnB3dXJRYCjadfmCOfssmT4srJD0n2H55fmqz7sy21BMeN/0icOpun8zWxsbYUVV/PrlCdfJblNym+HCSppTb4skir4gBFJMWyHNv+3d7+h2qwbtgkwnpFZWNw/8+oQ/nJ+Qit6IDa3RxV+cikKfBUVQ/pKfchEmxjpf8bslXyKqo9WqEY7lb7TZBXs6N+rrQvP2S+f7NOJTTo6UqIDL7U5AP2GxtAi4ZPVs=
-  file: '$TRAVIS_BUILD_DIR/lib/kerberos.node'
+  file: '$TRAVIS_BUILD_DIR/build/release/kerberos.node'
   skip_cleanup: true
   on:
     tags: false
